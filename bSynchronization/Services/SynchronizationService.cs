@@ -13,6 +13,11 @@ namespace bSynchronization.Services
             this.hubConnectionBroker = hubConnectionBroker;
         }
 
+        public void SendAsync(string groupName, string message)
+        {
+            throw new NotImplementedException();
+        }
+
         public async ValueTask StartAsync() =>
             await this.hubConnectionBroker.StartAsync();
     }
