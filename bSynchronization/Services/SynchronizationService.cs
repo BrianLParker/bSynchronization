@@ -8,15 +8,11 @@ namespace bSynchronization.Services
     {
         private readonly IHubConnectionBroker hubConnectionBroker;
 
-        public SynchronizationService(IHubConnectionBroker hubConnectionBroker)
-        {
+        public SynchronizationService(IHubConnectionBroker hubConnectionBroker) =>
             this.hubConnectionBroker = hubConnectionBroker;
-        }
 
-        public void SendAsync(string groupName, string message)
-        {
-            throw new NotImplementedException();
-        }
+        public async ValueTask SendAsync(string groupName, string message) =>
+            await this.hubConnectionBroker.SendAsync(groupName, message);
 
         public async ValueTask StartAsync() =>
             await this.hubConnectionBroker.StartAsync();

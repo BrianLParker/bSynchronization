@@ -5,6 +5,6 @@ namespace bSynchronization.Services
     public interface ISynchronizationService
     {
         ValueTask StartAsync();
-        void SendAsync(string groupName, string message);
+        ValueTask SendAsync(string groupName, string message);
     }
 }
