@@ -13,9 +13,7 @@ namespace bSynchronization.Services
             this.hubConnectionBroker = hubConnectionBroker;
         }
 
-        public ValueTask StartAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public async ValueTask StartAsync() =>
+            await this.hubConnectionBroker.StartAsync();
     }
 }
