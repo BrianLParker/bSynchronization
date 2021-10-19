@@ -12,5 +12,6 @@ namespace bSynchronization.Services
     {
         ValueTask StartAsync();
         ValueTask SendAsync(string groupName, string message);
+        ValueTask JoinGroupAsync(string groupName);
     }
 }
